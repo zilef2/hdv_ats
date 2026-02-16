@@ -1,118 +1,155 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Alejandro Madrid</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          animation: {
-            float: "float 6s ease-in-out infinite",
-            fadeIn: "fadeIn 1.2s ease-out forwards",
-            gradient: "gradient 8s ease infinite",
-          },
-          keyframes: {
-            float: {
-              "0%,100%": { transform: "translateY(0px)" },
-              "50%": { transform: "translateY(-15px)" },
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Alejandro Madrid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        float: "float 6s ease-in-out infinite",
+                        fadeIn: "fadeIn 1.2s ease-out forwards",
+                        gradient: "gradient 8s ease infinite",
+                    },
+                    keyframes: {
+                        float: {
+                            "0%,100%": { transform: "translateY(0px)" },
+                            "50%": { transform: "translateY(-15px)" },
+                        },
+                        fadeIn: {
+                            "0%": { opacity: 0, transform: "translateY(20px)" },
+                            "100%": { opacity: 1, transform: "translateY(0)" },
+                        },
+                        gradient: {
+                            "0%,100%": { backgroundPosition: "0% 50%" },
+                            "50%": { backgroundPosition: "100% 50%" },
+                        },
+                    },
+                },
             },
-            fadeIn: {
-              "0%": { opacity: 0, transform: "translateY(20px)" },
-              "100%": { opacity: 1, transform: "translateY(0)" },
-            },
-            gradient: {
-              "0%,100%": { backgroundPosition: "0% 50%" },
-              "50%": { backgroundPosition: "100% 50%" },
-            },
-          },
-        },
-      },
-    };
-  </script>
+        };
+    </script>
 </head>
 
 <body class="bg-gray-950 text-gray-200 font-sans">
 
-  <!-- Hero -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-[length:200%_200%] animate-gradient">
-    <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">
-      Full-Stack Engineer
-    </h1>
-    <p class="text-xl md:text-2xl max-w-2xl opacity-90 animate-fadeIn delay-200">
-      Architecting scalable workforce & payroll platforms used by 100+ active users.
-    </p>
-    <div class="mt-10 animate-float">
-      <a href="#projects" class="px-8 py-3 bg-black/40 backdrop-blur rounded-full hover:scale-110 transition transform">
-        View Work
-      </a>
-    </div>
-  </section>
-
-  <!-- Tech Stack -->
-  <section class="py-20 px-6 text-center">
-    <h2 class="text-4xl font-bold mb-12">Core Stack</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Laravel</div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Vue 3</div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Python</div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Django</div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">PostgreSQL</div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">REST APIs</div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Tailwind</div>
-      <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Architecture</div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-20 px-6 bg-gray-900">
-    <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
-
-    <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-
-      <div class="group bg-gray-950 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
-        <h3 class="text-2xl font-semibold mb-4">Demco S.A.S.</h3>
-        <p class="text-gray-400 mb-4">
-          A Colombian leader in the electrical sector specializing in the design and manufacture of medium and low voltage substations. Based in Medellín, the company provides high-tech solutions in industrial automation, process control, and certified switchboards for energy infrastructure and large-scale industrial projects.
+    <!-- Hero -->
+    <section
+        class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-[length:200%_200%] animate-gradient">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">
+            Full-Stack Engineer
+        </h1>
+        <p class="text-xl md:text-2xl max-w-2xl opacity-90 animate-fadeIn delay-200">
+            Architecting scalable workforce & payroll platforms used by 100+ active users.
         </p>
-        <p class="text-sm text-indigo-400 mb-4">~100 active users</p>
-        <a href="http://190.144.89.198:8000" target="_blank"
-           class="text-indigo-300 group-hover:underline">
-          Live System →
+        <div class="mt-10 animate-float">
+            <a href="#projects"
+                class="px-8 py-3 bg-black/40 backdrop-blur rounded-full hover:scale-110 transition transform">
+                View Work
+            </a>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-20 px-6 text-center">
+        <h2 class="text-4xl font-bold mb-12">Core Stack</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Laravel</div>
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Vue 3</div>
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Python</div>
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Django</div>
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">PostgreSQL</div>
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">REST APIs</div>
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Tailwind</div>
+            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Architecture</div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-20 px-6 bg-gray-900">
+        <h2 class="text-4xl font-bold text-center mb-12">My Projects</h2>
+
+        <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+
+            <div class="group bg-gray-950 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
+                <h3 class="text-2xl font-semibold mb-4">Demco S.A.S.</h3>
+                <p class="text-gray-400 mb-4">
+                    A Colombian leader in the electrical sector specializing in the design and manufacture of medium and
+                    low voltage substations. Based in Medellín, the company provides high-tech solutions in industrial
+                    automation, process control, and certified switchboards for energy infrastructure and large-scale
+                    industrial projects.
+                </p>
+                <p class="text-sm text-indigo-400 mb-4">~100 active users</p>
+                <a href="http://190.144.89.198:8000" target="_blank" class="text-indigo-300 group-hover:underline">
+                    Live System →
+                </a>
+            </div>
+
+            <div class="group bg-gray-950 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
+                <h3 class="text-2xl font-semibold mb-4">EC ingenieria S.A.S.</h3>
+                <p class="text-gray-400 mb-4">
+                    A Medellín-based firm dedicated to providing specialized electrical engineering and consulting
+                    services. They focus on the design, installation, and maintenance of electrical systems, ensuring
+                    energy efficiency and technical compliance for industrial, commercial, and residential projects
+                    throughout the region.
+                </p>
+                <p class="text-sm text-purple-400 mb-4">Monolith solution</p>
+                <a href="https://modnom.ecnomina.com" target="_blank" class="text-purple-300 group-hover:underline">
+                    Live System →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="py-20 text-center px-6">
+        <h2 class="text-4xl font-bold mb-6">Let’s Build Something Scalable</h2>
+        <p class="text-gray-400 mb-8">Backend architecture • APIs • Business platforms</p>
+        <a href="mailto:ajelof2@gmail.com"
+            class="px-10 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-xl hover:scale-110 transition transform">
+            Contact Me
         </a>
-      </div>
+    </section>
+    <section class="py-20 text-center px-6">
+        <h2 class="text-xl font-bold mb-6">Or just copy my email</h2>
+        <button id="copyEmail"
+            class="px-10 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-xl hover:scale-110 transition transform text-white font-bold">
+            copy!
+        </button>
+    </section>
 
-      <div class="group bg-gray-950 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
-        <h3 class="text-2xl font-semibold mb-4">EC ingenieria S.A.S.</h3>
-        <p class="text-gray-400 mb-4">
-          A Medellín-based firm dedicated to providing specialized electrical engineering and consulting services. They focus on the design, installation, and maintenance of electrical systems, ensuring energy efficiency and technical compliance for industrial, commercial, and residential projects throughout the region.
-        </p>
-        <p class="text-sm text-purple-400 mb-4">Monolith solution</p>
-        <a href="https://modnom.ecnomina.com" target="_blank"
-           class="text-purple-300 group-hover:underline">
-          Live System →
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="py-20 text-center px-6">
-    <h2 class="text-4xl font-bold mb-6">Let’s Build Something Scalable</h2>
-    <p class="text-gray-400 mb-8">Backend architecture • APIs • Business platforms</p>
-    <a href="mailto:ajelof2@gmail.com"
-       class="px-10 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full shadow-xl hover:scale-110 transition transform">
-       Contact Me
-    </a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-6 text-center text-gray-600 text-sm">
-    © 2026 Alejandro Madrid — Engineered for performance.
-  </footer>
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-600 text-sm">
+        © 2026 Alejandro Madrid — Engineered for performance.
+    </footer>
 
 </body>
+<script>
+    const email = "ajelof2@gmail.com";
+    const btn = document.getElementById('copyEmail');
+
+    btn.addEventListener('click', () => {
+        // Usamos la API moderna del portapapeles
+        navigator.clipboard.writeText(email).then(() => {
+            // Cambio visual temporal para feedback del usuario
+            const originalText = btn.innerText;
+            btn.innerText = "¡Copied!";
+            btn.classList.replace('from-indigo-500', 'from-green-500');
+
+            // Revertir el botón después de 2 segundos
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.replace('from-green-500', 'from-indigo-500');
+            }, 2000);
+        }).catch(err => {
+            console.error('Error al copiar: ', err);
+        });
+    });
+</script>
+
 </html>
