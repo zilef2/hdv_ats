@@ -5,50 +5,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio | Alejandro Madrid</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        float: "float 6s ease-in-out infinite",
-                        fadeIn: "fadeIn 1.2s ease-out forwards",
-                        gradient: "gradient 8s ease infinite",
-                    },
-                    keyframes: {
-                        float: {
-                            "0%,100%": { transform: "translateY(0px)" },
-                            "50%": { transform: "translateY(-15px)" },
-                        },
-                        fadeIn: {
-                            "0%": { opacity: 0, transform: "translateY(20px)" },
-                            "100%": { opacity: 1, transform: "translateY(0)" },
-                        },
-                        gradient: {
-                            "0%,100%": { backgroundPosition: "0% 50%" },
-                            "50%": { backgroundPosition: "100% 50%" },
-                        },
-                    },
-                },
-            },
-        };
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 
-<body class="bg-gray-950 text-gray-200 font-sans">
+<body class="bg-gray-900 text-gray-200 font-sans">
 
     <!-- Hero -->
     <section
-        class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-[length:200%_200%] animate-gradient">
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fadeIn">
+        class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-r from-indigo-900 via-purple-900 to-gray-900">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 opacity-0 hero-title">
             Full-Stack Engineer
         </h1>
-        <p class="text-xl md:text-2xl max-w-2xl opacity-90 animate-fadeIn delay-200">
-            Architecting scalable workforce & payroll platforms used by 100+ active users.
+        <p class="text-xl md:text-2xl max-w-2xl opacity-0 hero-subtitle">
+            Architecting scalable workforce &amp; payroll platforms used by 100+ active users.
         </p>
-        <div class="mt-10 animate-float">
+        <div class="mt-10 opacity-0 hero-btn">
             <a href="#projects"
-                class="px-8 py-3 bg-black/40 backdrop-blur rounded-full hover:scale-110 transition transform">
+                class="px-8 py-3 bg-black bg-opacity-40 backdrop-blur rounded-full hover:scale-110 transition transform">
                 View Work
             </a>
         </div>
@@ -56,16 +30,53 @@
 
     <!-- Tech Stack -->
     <section class="py-20 px-6 text-center">
-        <h2 class="text-4xl font-bold mb-12">Core Stack</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Laravel</div>
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Vue 3</div>
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Python</div>
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Django</div>
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">PostgreSQL</div>
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">REST APIs</div>
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Tailwind</div>
-            <div class="p-6 bg-gray-900 rounded-2xl shadow-lg hover:scale-105 transition">Architecture</div>
+        <h2 class="text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Core Stack</h2>
+        
+        <!-- Main Stack (Initially Visible) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div class="p-8 bg-gray-800 border border-gray-700 rounded-2xl shadow-xl hover:scale-105 hover:border-indigo-500 transition duration-300 transform backdrop-blur opacity-0 main-stack-card">
+                <div class="text-indigo-400 text-sm font-semibold tracking-wider uppercase mb-2">Specialty</div>
+                <div class="text-2xl font-bold text-white">AI Engineer</div>
+            </div>
+            <div class="p-8 bg-gray-800 border border-gray-700 rounded-2xl shadow-xl hover:scale-105 hover:border-purple-500 transition duration-300 transform backdrop-blur opacity-0 main-stack-card">
+                <div class="text-purple-400 text-sm font-semibold tracking-wider uppercase mb-2">Backend Framework</div>
+                <div class="text-2xl font-bold text-white">Laravel</div>
+            </div>
+            <div class="p-8 bg-gray-800 border border-gray-700 rounded-2xl shadow-xl hover:scale-105 hover:border-pink-500 transition duration-300 transform backdrop-blur opacity-0 main-stack-card">
+                <div class="text-pink-400 text-sm font-semibold tracking-wider uppercase mb-2">Cloud Platform</div>
+                <div class="text-2xl font-bold text-white">Google Cloud Platform</div>
+            </div>
+        </div>
+
+        <!-- Secondary Stack (Hidden by Default) -->
+        <div id="more-stack-container" class="hidden mt-8 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div class="p-6 bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:border-indigo-500 transition duration-300 transform">
+                <div class="text-lg font-semibold text-gray-300">Vue 3</div>
+            </div>
+            <div class="p-6 bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:border-indigo-500 transition duration-300 transform">
+                <div class="text-lg font-semibold text-gray-300">Python</div>
+            </div>
+            <div class="p-6 bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:border-indigo-500 transition duration-300 transform">
+                <div class="text-lg font-semibold text-gray-300">PostgreSQL & MySQL</div>
+            </div>
+            <div class="p-6 bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:border-indigo-500 transition duration-300 transform">
+                <div class="text-lg font-semibold text-gray-300">DevOps</div>
+            </div>
+            <div class="p-6 bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:border-indigo-500 transition duration-300 transform">
+                <div class="text-lg font-semibold text-gray-300">Power BI</div>
+            </div>
+            <div class="p-6 bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:border-indigo-500 transition duration-300 transform">
+                <div class="text-lg font-semibold text-gray-300">REST APIs</div>
+            </div>
+            <div class="p-6 bg-gray-800 bg-opacity-40 border border-gray-700 rounded-2xl shadow-lg hover:scale-105 hover:border-indigo-500 transition duration-300 transform">
+                <div class="text-lg font-semibold text-gray-300">Tailwind CSS</div>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <button id="btn-toggle-stack" class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full hover:from-indigo-500 hover:to-purple-500 hover:scale-105 transition transform shadow-lg text-white font-semibold focus:outline-none">
+                Ver más
+            </button>
         </div>
     </section>
 
@@ -75,7 +86,7 @@
 
         <div class="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
 
-            <div class="group bg-gray-950 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
+            <div class="group bg-gray-800 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
                 <h3 class="text-2xl font-semibold mb-4">Demco S.A.S.</h3>
                 <p class="text-gray-400 mb-4">
                     A Colombian leader in the electrical sector specializing in the design and manufacture of medium and
@@ -89,7 +100,7 @@
                 </a>
             </div>
 
-            <div class="group bg-gray-950 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
+            <div class="group bg-gray-800 p-8 rounded-3xl shadow-2xl hover:-translate-y-2 transition duration-500">
                 <h3 class="text-2xl font-semibold mb-4">EC ingenieria S.A.S.</h3>
                 <p class="text-gray-400 mb-4">
                     A Medellín-based firm dedicated to providing specialized electrical engineering and consulting
@@ -149,6 +160,54 @@
         }).catch(err => {
             console.error('Error al copiar: ', err);
         });
+    });
+
+    // Controlador para mostrar/ocultar tecnologías adicionales
+    const toggleBtn = document.getElementById('btn-toggle-stack');
+    const moreStack = document.getElementById('more-stack-container');
+
+    toggleBtn.addEventListener('click', () => {
+        if (moreStack.classList.contains('hidden')) {
+            moreStack.classList.remove('hidden');
+            toggleBtn.innerText = 'Ver menos';
+        } else {
+            moreStack.classList.add('hidden');
+            toggleBtn.innerText = 'Ver más';
+        }
+    });
+
+    // Animaciones con Anime.js
+    document.addEventListener("DOMContentLoaded", () => {
+        const tl = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 1000
+        });
+
+        tl.add({
+            targets: '.hero-title',
+            opacity: [0, 1],
+            translateY: [40, 0],
+            delay: 300
+        })
+        .add({
+            targets: '.hero-subtitle',
+            opacity: [0, 0.9],
+            translateY: [20, 0],
+            duration: 800
+        }, '-=600')
+        .add({
+            targets: '.hero-btn',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 800
+        }, '-=650')
+        .add({
+            targets: '.main-stack-card',
+            opacity: [0, 1],
+            translateY: [30, 0],
+            delay: anime.stagger(150),
+            duration: 850
+        }, '-=500');
     });
 </script>
 
